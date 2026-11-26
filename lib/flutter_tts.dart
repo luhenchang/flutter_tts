@@ -42,7 +42,7 @@ const String iosAudioModeVideoRecording = 'iosAudioModeVideoRecording';
 const String iosAudioModeVoiceChat = 'iosAudioModeVoiceChat';
 const String iosAudioModeVoicePrompt = 'iosAudioModeVoicePrompt';
 
-enum TextToSpeechPlatform { android, ios }
+enum TextToSpeechPlatform { android, ios, ohos }
 
 /// Audio session category identifiers for iOS.
 ///
@@ -325,7 +325,8 @@ class SpeechRateValidRange {
   SpeechRateValidRange(this.min, this.normal, this.max, this.platform);
 }
 
-// Provides Platform specific TTS services (Android: TextToSpeech, IOS: AVSpeechSynthesizer)
+// Provides Platform specific TTS services
+// (Android: TextToSpeech, iOS: AVSpeechSynthesizer, HarmonyOS: CoreSpeechKit textToSpeech)
 class FlutterTts {
   static const MethodChannel _channel = MethodChannel('flutter_tts');
 
